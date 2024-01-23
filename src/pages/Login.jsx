@@ -7,13 +7,17 @@ import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
+// Create a useState name [userDetails, setUserDetails] and assign it with initial value {username:"atuny0", password:"9uQFF1Lh"}
+// Create a useEffect and inside it check if global user is present navigate to "/" using the useNavigate hook
+// Set values of input as userDetails.username and userDetails.password respectively
+
 function Login() {
   const dispatch = useDispatch();
   const globalUser = useSelector((state) => state.auth.userData);
-  const [userDetails, setUserDetails] = useState({
-    username: "atuny0",
-    password: "9uQFF1Lh",
-  });
+  // const [userDetails, setUserDetails] = useState({
+  //   username: "atuny0",
+  //   password: "9uQFF1Lh",
+  // });
 
   const navigate = useNavigate();
 
@@ -37,11 +41,11 @@ function Login() {
     }
   };
 
-  useEffect(() => {
-    if (globalUser) {
-      navigate("/");
-    }
-  }, [globalUser]);
+  // useEffect(() => {
+  //   if (globalUser) {
+  //     navigate("/");
+  //   }
+  // }, [globalUser]);
 
   return (
     <div className="w-full flex flex-col justify-around items-center">
@@ -58,7 +62,7 @@ function Login() {
               onChange={(e) => {
                 setUserDetails({ ...userDetails, username: e.target.value });
               }}
-              value={userDetails.username}
+              // value={userDetails.username}
               className="p-1 px-2 rounded-lg outline-none border-2 border-blue-600 w-full"
             />
           </div>
@@ -69,7 +73,7 @@ function Login() {
               onChange={(e) => {
                 setUserDetails({ ...userDetails, password: e.target.value });
               }}
-              value={userDetails.password}
+              // value={userDetails.password}
               className="p-1 px-2 rounded-lg outline-none border-2 border-blue-600 w-full"
             />
           </div>
