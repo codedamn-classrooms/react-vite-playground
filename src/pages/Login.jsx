@@ -43,6 +43,9 @@ function Login() {
     }
   }, [globalUser]);
 
+  // Make the form element with id="form" flex column with justify around
+  // Make the border radius inside the input with id="password" same as the border radius of input with id="username"
+  // Add p-2 to the button with id="submit_button"
   return (
     <div className="w-full flex flex-col justify-around items-center">
       <Toaster position="top-right" reverseOrder={false} className="absolute" />
@@ -50,11 +53,12 @@ function Login() {
         <div className="text-3xl text-center border-2 border-blue-400 bg-blue-400 rounded-xl w-[60%] mx-auto py-2">
           Login
         </div>
-        <form className="text-xl flex flex-col justify-around">
+        <form id="form" className="text-xl">
           <div className="flex flex-col my-2">
             <div>Username</div>
             <input
               type="text"
+              id="username"
               onChange={(e) => {
                 setUserDetails({ ...userDetails, username: e.target.value });
               }}
@@ -66,17 +70,19 @@ function Login() {
             <div>Password</div>
             <input
               type="password"
+              id="password"
               onChange={(e) => {
                 setUserDetails({ ...userDetails, password: e.target.value });
               }}
               value={userDetails.password}
-              className="p-1 px-2 rounded-lg outline-none border-2 border-blue-600 w-full"
+              className="p-1 px-2 outline-none border-2 border-blue-600 w-full"
             />
           </div>
           <button
             type="submit"
             onClick={submitHandler}
-            className="p-2 border-2 border-blue-400 bg-blue-400 rounded-xl w-[40%] mx-auto my-5"
+            id="submit_button"
+            className="border-2 border-blue-400 bg-blue-400 rounded-xl w-[40%] mx-auto my-5"
           >
             Submit
           </button>
