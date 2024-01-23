@@ -58,6 +58,7 @@ function Login() {
           <div className="flex flex-col my-2">
             <div>Username</div>
             <input
+              id="username"
               type="text"
               onChange={(e) => {
                 setUserDetails({ ...userDetails, username: e.target.value });
@@ -69,6 +70,7 @@ function Login() {
           <div className="flex flex-col my-2">
             <div>Password</div>
             <input
+              id="password"
               type="password"
               onChange={(e) => {
                 setUserDetails({ ...userDetails, password: e.target.value });
