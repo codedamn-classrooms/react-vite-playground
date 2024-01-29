@@ -1,7 +1,10 @@
+import OTPAuthentication from "./components/OTPAuthentication";
+
 const App = () => {
   return (
     <div>
-      <h1>Hello World!</h1>
+      <h1>OTP Authentication Project</h1>
+      <OTPAuthentication />
     </div>
   );
 };
